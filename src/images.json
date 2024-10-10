@@ -1,0 +1,119 @@
+{
+  "home": {
+    "hero": "/hero-img-desktop.jpg",
+    "heroMobile": "/hero-img-mobile.jpg",
+    "projects": [
+      {
+        "id": "mulberry-mansions-development",
+        "name": "Mulberry Mansions",
+        "src": "https://lh3.google.com/u/0/d/1bPjq_UCcy9Qh62XCcaaf34OaCJzU9xcB=w3360-h1766-iv1",
+        "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Residential Development.</p><p>Project Configuration - 2 Blocks of Ground + 3 Upper floors. (Comprising of 3,4 and 4 bedrooms of Maisonettes,</p> <p>Terraces, Penthouse and Duplex respectively)</p>"
+      },
+      {
+        "id": "r-jolad-hospital",
+        "name": "R-Jolad Plus",
+        "src": "https://lh3.google.com/u/0/d/1wGwcDKLstFrqVmGfA-GO3gAJTRsGhE7F=w3360-h1766-iv1",
+        "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Commercial Development. - Healthcare</p><p>Project Configuration - Ground + 5 Upper floors</p>"
+      },
+      {
+        "id": "st-augustine-uni-chapel-epe",
+        "name": "St. Augustine Uni. Chapel",
+        "src": "https://lh3.google.com/u/0/d/1HncURbTkzAX8XaTY47-LUNNrnSiBRaDp=w3360-h1766-iv1",
+        "desc": "<p>Scope - Design and Build</p><p>Building Type - Institutional Development.</p><p>Project Configuration - 1300 seater Auditorium</p>"
+      }
+    ],
+    "clients": ["Providusbank.svg", "Northwest.svg", "/Rjolad.svg"]
+  },
+  "projects": {
+    "hero": "/images/project-hero-bg.png",
+    "project_images": [
+      {
+        "id": "mulberry-mansions-development",
+        "img": "/images/project-img1.png",
+        "location": "Shoreline Estate, Ikoyi, Lagos State. 2023",
+        "projectName": "Mulberry Mansions",
+        "status": "completed"
+      },
+      {
+        "id": "r-jolad-hospital",
+        "img": "/images/project-img2.png",
+        "location": "Gbagada, Lagos State. 2023",
+        "projectName": "R-Jolad Plus Hospital",
+        "status": "completed"
+      },
+
+      {
+        "id": "providus-bank-surulere",
+        "img": "/images/project-img3.png",
+        "location": "Surulere, Lagos State.2024",
+        "projectName": "ProvidusBank",
+        "status": "completed"
+      },
+      {
+        "id": "northwest-filling-station-maryland",
+        "img": "/images/project-img4.png",
+        "location": "Maryland Lagos. 2023",
+        "projectName": "NorthWest Filling station",
+        "status": "completed"
+      }
+    ],
+    "ongoing_projects": [
+      {
+        "id": "st-augustine-uni-chapel-epe",
+        "projectName": "St Augustine University Chapel Development",
+        "imgSrc": "https://lh3.google.com/u/0/d/1HncURbTkzAX8XaTY47-LUNNrnSiBRaDp=w3360-h1766-iv1",
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Building Type - Institutional Development.</p><p>Project Configuration - 1300 seater Auditorium</p>"
+      },
+      {
+        "id": "cullingham-palace-lekki",
+        "projectName": "Cullingham Place, Lekki Foreshore",
+        "imgSrc": "https://lh3.google.com/u/0/d/1tDwnI5B6NkaHjz1P9dBCFOhBdMit74bw=w3360-h1766-iv1",
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q4, 2027</p><p>Building Type - Private Residential Developments.</p><p>Project Configuration - 96 units of a combination of Detached, Semi-detached, Terraces, 2-3 bedroom apartments and Penthouses.</p>"
+      },
+      {
+        "id": "project-sigma-rumens-ikoyi",
+        "projectName": "Project Sigma, Rumens Road",
+        "imgSrc": "https://lh3.google.com/u/0/d/14zpS-6qS9Joy3bIS6m48hhFMpdRSGSZl=w3360-h1766-iv1",
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q1, 2027</p><p>Building Type - Private Residential Development.</p><p>Project Configuration - Ground + 7 floors of 4-5 bedroom maisonettes and penthouses.</p>"
+      },
+      {
+        "id": "private-residential-development-ikoyi",
+        "projectName": "Private Residential Development, Shoreline Estate",
+        "imgSrc": "https://lh3.google.com/u/0/d/1i1ijgvzSU_jaXZvsBqr0n8RS9AyNkYCy=w3360-h1766-iv1",
+        "status": "ongoing",
+        "desc": "<p>Scope - Build Only (Civil works and Finishes Generally)</p><p>Building Type - Private Residential Development.</p><p>Project Configuration - Ground + 2 Upper floors.</p>"
+      }
+    ],
+    "other_projects": [
+      {
+        "id": "castle-and-temple-road-lekki",
+        "projectName": "Residential Development at Castle and Temple Road, Lekki.",
+        "imgSrc": "/images/other-img1.png"
+      },
+      {
+        "id": "providus-bank-lekki",
+        "projectName": "ProvidusBank Head Office,  Lekki, Lagos State ",
+        "imgSrc": "/images/other-img2.png"
+      },
+      {
+        "id": "providus-bank-victoria-island",
+        "projectName": "ProvidusBank Head Office, Victoria Island",
+        "imgSrc": "/images/other-img3.png"
+      }
+    ]
+  },
+  "blog": {},
+  "about": {
+    "hero": "/images/team-image.jpg",
+    "section3": "/images/about-section3-img.png",
+    "services": [
+      "/images/services-img1.png",
+      "/images/services-img2.png",
+      "/images/services-img3.png",
+      "/images/services-img4.png"
+    ]
+  }
+}
