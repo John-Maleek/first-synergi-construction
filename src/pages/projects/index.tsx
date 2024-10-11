@@ -112,20 +112,21 @@ export default function Projects() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box
-            className="section-container"
-            height={{ lg: "120px", base: "300px" }}
-          ></Box>
+          <Box className="section-container" height={"120px"}></Box>
           <Box
             bg={"gray"}
             bgImage={"assets/projectHeroImg.png"}
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
-            py={"160px"}
+            py={{ lg: "160px", base: "60px" }}
           >
             <Box className="section-container">
-              <Box maxW={"602px"} minH={"300px"}>
+              <Box
+                maxW={"602px"}
+                minH={{ lg: "300px", base: "auto" }}
+                textAlign={{ lg: "left", base: "center" }}
+              >
                 <Text className="body-text-1" color={"secondary"} mb={"24px"}>
                   our projects
                 </Text>

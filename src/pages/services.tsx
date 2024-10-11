@@ -1,29 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Input,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import HomeProjectCmp from "@/components/HomeProjectCmp";
-import BlogItemCmp from "@/components/BlogItemCmp";
-import ImagesList from "@/images.json";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 import FooterCmp from "@/components/FooterCmp";
 import SectionAnimation from "@/components/SectionAnimation";
-import ServicesTextCmp from "@/components/ServicesTextCmp";
-import BounceAnimation from "@/components/BounceAnimation";
 import { TypeAnimation } from "react-type-animation";
 import { useRouter } from "next/router";
 
@@ -46,11 +28,16 @@ const ServiceDetailCmp = ({
       w="full"
       color={"#fff"}
       p={{ lg: "40px", base: "20px" }}
-      minH={"416px"}
+      minH={{ lg: "416px", base: "349px" }}
+      textAlign={{ lg: "left", base: "center" }}
     >
       {!bgImage && (
         <Box maxW={"394px"}>
-          <Heading fontSize={"47px"} lineHeight={"100%"} fontWeight={500}>
+          <Heading
+            fontSize={{ lg: "47px", base: "32px" }}
+            lineHeight={"100%"}
+            fontWeight={500}
+          >
             {heading}
           </Heading>
           <Text className="body-text-2" mt={"32px"}>
@@ -137,10 +124,7 @@ export default function Services() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box
-            className="section-container"
-            height={{ lg: "120px", base: "300px" }}
-          ></Box>
+          <Box className="section-container" height={"120px"}></Box>
 
           <Box
             bg={"gray"}
@@ -148,10 +132,14 @@ export default function Services() {
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
-            py={"160px"}
+            py={{ lg: "160px", base: "60px" }}
           >
             <Box className="section-container">
-              <Box maxW={"700px"} minH={"300px"}>
+              <Box
+                maxW={"700px"}
+                minH={{ lg: "300px", base: "auto" }}
+                textAlign={{ lg: "left", base: "center" }}
+              >
                 <Text className="body-text-1" color={"secondary"} mb={"24px"}>
                   Our Services
                 </Text>
@@ -173,8 +161,14 @@ export default function Services() {
         </section>
         <section className="section-container">
           <SectionAnimation>
-            <Box pt={"100px"} pb={"108px"}>
-              <Flex mt={"37px"} gap={"63px"} maxW={"695px"}>
+            <Box pt={{ lg: "100px", base: "0" }} pb={"108px"}>
+              <Box
+                color={"primary"}
+                className="body-text-2"
+                mt={"37px"}
+                gap={"63px"}
+                maxW={"695px"}
+              >
                 <Text
                   color={"primary"}
                   className="body-text-2"
@@ -191,21 +185,27 @@ export default function Services() {
                   <br />
                   We take a consultative approach, prioritizing:
                   <br />
-                  {/* <ul>
-                    <li>Our strong relationships with clients</li>
-                    <li>Our clients' connections to their environments</li>
-                    <li>
-                      The integration of our clients' buildings with their
-                      surroundings and the broader urban landscape.
-                    </li>
-                  </ul> */}
                 </Text>
-              </Flex>
+                <ul
+                  style={{
+                    listStyle: "outside",
+                    marginLeft: "20px",
+                    fontSize: "inherit",
+                  }}
+                >
+                  <li>Our strong relationships with clients</li>
+                  <li>Our clients' connections to their environments</li>
+                  <li>
+                    The integration of our clients' buildings with their
+                    surroundings and the broader urban landscape.
+                  </li>
+                </ul>
+              </Box>
             </Box>
           </SectionAnimation>
         </section>
         <section className="section-container">
-          <SimpleGrid columns={2}>
+          <SimpleGrid display={{ lg: "grid", base: "none" }} columns={2}>
             <ServiceDetailCmp bgImage={"assets/service-img-1.png"} />
             <ServiceDetailCmp
               heading="Architectural Design"
@@ -223,23 +223,35 @@ export default function Services() {
               subtitle="First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm"
             />
           </SimpleGrid>
+          <SimpleGrid display={{ base: "grid", lg: "none" }} columns={1}>
+            <ServiceDetailCmp bgImage={"assets/service-img-1.png"} />
+            <ServiceDetailCmp
+              heading="Architectural Design"
+              subtitle="A thorough and informative design brief is an imperative part of the design process. It is an essential point of reference not only for the architect"
+            />
+            <ServiceDetailCmp bgImage={"assets/service-img-2.png"} />
+            <ServiceDetailCmp
+              heading="Building Construction "
+              subtitle="We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures. "
+            />
+            <ServiceDetailCmp bgImage={"assets/service-img-3.png"} />
+
+            <ServiceDetailCmp
+              heading="Projec Management"
+              subtitle="First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm"
+            />
+          </SimpleGrid>
           <Box
             w="full"
             bgImage={"assets/why-choose-us-img.png"}
             bgSize={"cover"}
             bgPosition={"center"}
             bgRepeat={"no-repeat"}
-            px={"80px"}
-            py={"94px"}
+            px={{ lg: "80px", md: "32px", base: "16px" }}
+            py={{ lg: "94px", md: "32px", base: "66px" }}
             mb={"40px"}
           >
-            <Flex
-              direction={"column"}
-              justify={"center"}
-              h={"100%"}
-              pt={{ lg: 0, base: "95px" }}
-              pb={{ lg: 0, base: "126px" }}
-            >
+            <Flex direction={"column"} justify={"center"} h={"100%"}>
               <Heading className="heading-2" color={"white"}>
                 Why choose us
               </Heading>

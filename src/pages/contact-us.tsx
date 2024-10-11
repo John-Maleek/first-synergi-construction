@@ -66,7 +66,10 @@ const ContactUs = () => {
     const formData = new FormData();
 
     formData.append("access_key", "eec6ca8a-2e2e-4ba7-8b70-87e71dd8da62");
-    formData.append("Form Title", "Build with us contact form");
+    formData.append(
+      "Form Title",
+      "First Synergi construction website: Build with us contact form"
+    );
     formData.append("firstName", firstName);
     formData.append("lastName", lastName);
     formData.append("email", email);
@@ -170,7 +173,7 @@ const ContactUs = () => {
         </nav>
         <section ref={navRef} className="section-container">
           <Box
-            h={{ lg: "150px", base: "150px" }}
+            h={{ lg: "120px", base: "120px" }}
             mb={"27px "}
             maxW={"842px"}
           ></Box>
@@ -183,7 +186,6 @@ const ContactUs = () => {
               justify={"space-between"}
             >
               <Box
-                display={{ base: "none", lg: "block" }}
                 bgColor={"primary"}
                 color={"#fff"}
                 width={"100%"}
@@ -221,7 +223,7 @@ const ContactUs = () => {
                     <Text>website: www.firstsynergihomes.com</Text>
                   </a>
                 </Stack>
-                <Text opacity={0.3} className="body-text-1">
+                <Text opacity={0.3} className="body-text-1" mt={"32px"}>
                   mailing address
                 </Text>
                 <Text className="body-text-2" mt={"21px"}>

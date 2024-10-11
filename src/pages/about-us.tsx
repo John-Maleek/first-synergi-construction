@@ -149,10 +149,7 @@ export default function AboutUs() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box
-            className="section-container"
-            height={{ lg: "120px", base: "300px" }}
-          ></Box>
+          <Box className="section-container" height={"120px"}></Box>
 
           <Box
             bg={"gray"}
@@ -160,10 +157,14 @@ export default function AboutUs() {
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
-            py={"160px"}
+            py={{ lg: "160px", base: "60px" }}
           >
             <Box className="section-container">
-              <Box maxW={"700px"} minH={"300px"}>
+              <Box
+                maxW={"700px"}
+                minH={{ lg: "300px", base: "auto" }}
+                textAlign={{ lg: "left", base: "center" }}
+              >
                 <Text className="body-text-1" color={"secondary"} mb={"24px"}>
                   About First Synergi Construction
                 </Text>
@@ -185,18 +186,25 @@ export default function AboutUs() {
         </section>
         <section className="section-container">
           <SectionAnimation>
-            <Box pt={"100px"} pb={"108px"}>
+            <Box
+              pt={{ lg: "100px", base: "40px" }}
+              pb={{ lg: "108px", base: "40px" }}
+            >
               <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
                 <Text className="body-text-1" color={"secondary"}>
                   Who we are
                 </Text>
               </Box>
-              <Flex mt={"37px"} gap={"63px"}>
+              <Flex
+                flexDirection={{ lg: "row", base: "column" }}
+                mt={{ lg: "37px", base: "16px" }}
+                gap={{ lg: "63px", base: "16px" }}
+              >
                 <Text
                   color={"primary"}
                   className="body-text-2"
                   text-align="justify"
-                  w="50%"
+                  w={{ lg: "50%", base: "full" }}
                 >
                   Incorporated in Nigeria in 2007, First Synergi Construction
                   Limited primarily provides interior design and construction
@@ -218,11 +226,11 @@ export default function AboutUs() {
                 </Text>
                 <Box
                   bgColor={"primary"}
-                  px={"42px"}
-                  pt={"53px"}
-                  pb={"104px"}
+                  px={{ lg: "42px", base: "16px" }}
+                  pt={{ lg: "53px", base: "63px" }}
+                  pb={{ lg: "104px", base: "66px" }}
                   h="fit-content"
-                  w="50%"
+                  w={{ lg: "50%", base: "full" }}
                   position={"relative"}
                 >
                   <Text
@@ -233,7 +241,7 @@ export default function AboutUs() {
                     MISSION STATEMENT
                   </Text>
                   <Text
-                    fontSize={"26px"}
+                    fontSize={{ lg: "26px", base: "20px" }}
                     fontWeight={400}
                     lineHeight={"130%"}
                     mt={"36px"}
@@ -245,11 +253,11 @@ export default function AboutUs() {
                   </Text>
                   <Box
                     bg={"#fff"}
-                    width={"200px"}
-                    height={"200px"}
+                    width={{ lg: "200px", base: "100px" }}
+                    height={{ lg: "200px", base: "100px" }}
                     position={"absolute"}
-                    right={-83}
-                    bottom={-117}
+                    right={{ lg: -83, base: "-50px" }}
+                    bottom={{ lg: -117, base: "-60px" }}
                     transform={"rotate(52deg) "}
                   />
                 </Box>
@@ -261,7 +269,7 @@ export default function AboutUs() {
           <SectionAnimation>
             <Flex
               flexDirection={{ lg: "row", base: "column" }}
-              mt={"77px"}
+              mt={{ lg: "77px", base: "40px" }}
               gap={"38px"}
               position={"relative"}
             >
@@ -270,8 +278,8 @@ export default function AboutUs() {
                   our values
                 </Text>
                 <SimpleGrid
-                  columns={3}
-                  gridGap={"auto"}
+                  columns={{ lg: 3, base: 1 }}
+                  gridGap={{ lg: "auto", base: "16px" }}
                   minChildWidth={"290px"}
                   mt={"34px"}
                 >
@@ -310,17 +318,12 @@ export default function AboutUs() {
               bgSize={"cover"}
               bgPosition={"center"}
               bgRepeat={"no-repeat"}
-              px={"80px"}
-              py={"94px"}
-              mt="62px"
+              px={{ lg: "80px", md: "32px", base: "16px" }}
+              py={{ lg: "94px", md: "32px", base: "66px" }}
+              mb={"40px"}
+              mt={"60px"}
             >
-              <Flex
-                direction={"column"}
-                justify={"center"}
-                h={"100%"}
-                pt={{ lg: 0, base: "95px" }}
-                pb={{ lg: 0, base: "126px" }}
-              >
+              <Flex direction={"column"} justify={"center"} h={"100%"}>
                 <Heading className="heading-2" color={"white"}>
                   Why choose us
                 </Heading>
@@ -415,7 +418,7 @@ export default function AboutUs() {
                   lg: "repeat(3, 1fr)",
                   md: "repeat(2, 1fr)",
                 }}
-                rowGap={"24px"}
+                rowGap={{ lg: "24px", base: "32px" }}
                 columnGap={"55px"}
                 ml={{ lg: "auto", base: 0 }}
                 mt={{ lg: "70px", base: "40px" }}
@@ -423,7 +426,11 @@ export default function AboutUs() {
               >
                 {TeamMembers.map((member) => (
                   <GridItem key={member.name}>
-                    <TeamMemberCmp name={member.name} role={member.role} />
+                    <TeamMemberCmp
+                      name={member.name}
+                      role={member.role}
+                      noBorder
+                    />
                   </GridItem>
                 ))}
               </Grid>

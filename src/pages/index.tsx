@@ -40,26 +40,41 @@ export default function Home() {
   const [isMobile] = useMediaQuery("(max-width: 767px)");
 
   const expertiseImgs = [
-    { img: "assets/expertiseImg1.png", label: "Architectural Design" },
-    { img: "assets/expertiseImg2.png", label: "Building Construction" },
-    { img: "assets/expertiseImg3.png", label: "Project Management" },
+    {
+      img: "assets/expertiseImg1.png",
+      label: "Architectural Design",
+      subtext:
+        "A thorough and informative design brief is an imperative part of the design process. It is an essential point of reference not only for the architect",
+    },
+    {
+      img: "assets/expertiseImg2.png",
+      label: "Building Construction",
+      subtext:
+        "We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures.",
+    },
+    {
+      img: "assets/expertiseImg3.png",
+      label: "Project Management",
+      subtext:
+        "First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm specialising in design, development.",
+    },
   ];
 
   const constructionServices = [
     {
       name: "Corporate Building",
       desc: "We understand you need a building that works for you and your organization, and it must function well",
-      icon: <CorporateBuildingIcon boxSize={"64px"} />,
+      icon: <CorporateBuildingIcon boxSize={{ lg: "64px", base: "32px" }} />,
     },
     {
       name: "Health Care Construction",
       desc: "",
-      icon: <HealthCareIcon boxSize={"64px"} />,
+      icon: <HealthCareIcon boxSize={{ lg: "64px", base: "32px" }} />,
     },
     {
       name: "Interior Design",
       desc: "",
-      icon: <InteriorDesignIcon boxSize={"64px"} />,
+      icon: <InteriorDesignIcon boxSize={{ lg: "64px", base: "32px" }} />,
     },
   ];
 
@@ -192,10 +207,13 @@ export default function Home() {
             </Box>
           </Box>
         </motion.section>
-        <Stack spacing={"20px"} px={"10px"}>
+        <Stack spacing={"20px"} px={{ lg: "10px", base: "0" }}>
           <section className="section-container">
             <SectionAnimation>
-              <Box py={{ md: "108px", base: "32px" }}>
+              <Box
+                py={{ md: "108px", base: "32px" }}
+                textAlign={{ lg: "left", base: "center" }}
+              >
                 <Flex
                   flexDirection={{ md: "row", base: "column" }}
                   justify={"space-between"}
@@ -230,14 +248,14 @@ export default function Home() {
                       quality and satisfaction in every project.
                     </Text>
                     <Button
-                      bgColor={"none"}
+                      bgColor={"#fff"}
                       color={"secondary"}
                       border={"1px solid"}
                       borderColor={"secondary"}
                       _hover={{ color: "#fff", bgColor: "secondary" }}
                       label="Learn more about us"
                       transition={"background .5s linear"}
-                      mt={"50px"}
+                      mt={{ lg: "50px", base: "32px" }}
                     />
                   </Box>
                 </Flex>
@@ -255,6 +273,7 @@ export default function Home() {
                 color={"white"}
                 py={{ md: "98px", base: "72px" }}
                 position={"relative"}
+                textAlign={{ lg: "left", base: "center" }}
               >
                 <Flex
                   className="section-container"
@@ -264,7 +283,7 @@ export default function Home() {
                   justify={"space-between"}
                   gap={{ base: "32px", md: 0 }}
                 >
-                  <Stack spacing={"21px"} maxW={"665px"}>
+                  <Stack spacing={{ lg: "21px", base: "16px" }} maxW={"665px"}>
                     <Text
                       fontSize={{ md: "20px", base: "16px" }}
                       fontWeight={600}
@@ -301,150 +320,48 @@ export default function Home() {
                   </Box>
                 </Flex>
                 <Flex
-                  position={"relative"}
+                  flexDirection={{ lg: "row", base: "column" }}
+                  position={{ lg: "relative", base: "static" }}
                   right={0}
                   justify={"flex-end"}
-                  gap={"10px"}
+                  gap={{ lg: "10px", base: "16px" }}
                   mt={"51px"}
+                  px={{ lg: 0, base: "16px" }}
                 >
                   {expertiseImgs.map((item, index) => (
                     <Flex
+                      flexDirection={{ lg: "row", base: "column" }}
                       key={index}
                       bgImage={item.img}
-                      bgSize={"contain"}
+                      bgSize={"cover"}
                       bgRepeat={"no-repeat"}
                       w={"100%"}
                       maxW={"372px"}
-                      h={"673px"}
+                      h={{ lg: "673px", base: "420px" }}
+                      px={{ lg: "0", base: "20px" }}
+                      pb={{ lg: 0, base: "60px" }}
+                      textAlign={"left"}
                     >
                       <Heading
-                        fontSize={"48px"}
+                        fontSize={{ lg: "48px", base: "32px" }}
                         mt={"auto"}
-                        transform={
-                          "rotate(-90deg) translateX(180px) translateY(-100px) "
-                        }
+                        transform={{
+                          lg: "rotate(-90deg) translateX(180px) translateY(-100px) ",
+                          base: "none",
+                        }}
                       >
                         {item.label}
                       </Heading>
+                      <Text
+                        display={{ lg: "none", base: "block" }}
+                        className="body-text-2"
+                        mt={"13px"}
+                      >
+                        {item.subtext}
+                      </Text>
                     </Flex>
                   ))}
                 </Flex>
-                {/* <Box
-                className="no-scrollbar"
-                id="scroll-wrapper"
-                height={{ lg: "900px", base: "auto" }}
-                overflow={"scroll"}
-                mt={{ lg: "102px", base: "50px" }}
-              >
-                <Flex
-                  ref={scrollRef}
-                  className="no-scrollbar"
-                  id="horizontal-scroll-container"
-                  flexDirection={{ lg: "row", base: "column" }}
-                  gap={{ lg: "64px", base: "40px" }}
-                  width={"100%"}
-                  position={"sticky"}
-                  top={"0px"}
-                  overflowX={"auto"}
-                >
-                  {ImageList.home.projects.map((obj, index) => (
-                    <Link key={index} href={`/projects/${obj.id}`}>
-                      <HomeProjectCmp key={index} data={obj} index={index} />
-                    </Link>
-                  ))}
-                </Flex>
-                <Box
-                  display={{ lg: "block", base: "none" }}
-                  bg={"none"}
-                  height={{ lg: "700px", base: "auto" }}
-                  position={"sticky"}
-                  top={"0px"}
-                  mt={"200px"}
-                  zIndex={-1}
-                />
-                <Box
-                  display={{ lg: "block", base: "none" }}
-                  bg={"none"}
-                  height={{ lg: "700px", base: "auto" }}
-                  position={"sticky"}
-                  top={"0px"}
-                  mt={"200px"}
-                  zIndex={-1}
-                />
-                <Box
-                  display={{ lg: "block", base: "none" }}
-                  bg={"none"}
-                  height={{ lg: "200px", base: "auto" }}
-                  position={"sticky"}
-                  top={"0px"}
-                  mt={"200px"}
-                  zIndex={-1}
-                />
-              </Box>
-              <Box textAlign={"center"}>
-                <Heading
-                  color={"secondary"}
-                  fontSize={{ lg: "56px", base: "32px" }}
-                  letterSpacing={"-2.24px"}
-                >
-                  We are trusted
-                </Heading>
-                <Text
-                  fontSize={{ md: "20px", base: "16px" }}
-                  fontWeight={400}
-                  lineHeight={"130%"}
-                  mt={"16px"}
-                >
-                  Since inception we’ve been working with amazing clients to
-                  create meaningful
-                  <br /> impact and compelling experiences
-                </Text>
-                <BounceAnimation>
-                  <Flex
-                    alignItems={"center"}
-                    width={"full"}
-                    maxW={isMobile ? "338px" : "full"}
-                    mx={"auto"}
-                    mt={"40px"}
-                    gap={isMobile ? "34px" : "64px"}
-                    justify={isMobile ? "space-between" : "center"}
-                    position={"relative"}
-                  >
-                    <Image
-                      src={ImageList.home.clients[0]}
-                      alt="client-logo"
-                      width={isMobile ? 110 : 202}
-                      height={isMobile ? 56 : 104}
-                      style={{
-                        width: "auto",
-                        height: "auto",
-                        objectFit: "contain",
-                        objectPosition: "top",
-                      }}
-                    />
-                    <Image
-                      src={ImageList.home.clients[1]}
-                      alt="client-logo"
-                      width={isMobile ? 64 : 118}
-                      height={isMobile ? 46 : 85}
-                      style={{
-                        objectFit: "contain",
-                        objectPosition: "top",
-                      }}
-                    />
-                    <Image
-                      src={ImageList.home.clients[2]}
-                      alt="client-logo"
-                      width={isMobile ? 101 : 186}
-                      height={isMobile ? 49 : 81}
-                      style={{
-                        objectFit: "contain",
-                        objectPosition: "top",
-                      }}
-                    />
-                  </Flex>
-                </BounceAnimation>
-              </Box> */}
               </Box>
             </SectionAnimation>
           </section>
@@ -452,18 +369,20 @@ export default function Home() {
             <SectionAnimation>
               <Box
                 className="section-container"
-                py={{ lg: "96px", base: "45px" }}
+                py={{ lg: "96px", base: "32px" }}
               >
                 <Flex
                   color={"primary"}
                   alignItems={"flex-start"}
                   justify={"space-between"}
+                  gap={{ lg: "48px", base: "24px" }}
                   flexDirection={{ lg: "row", base: "column" }}
                 >
-                  <Box maxW={"50%"}>
+                  <Box maxW={{ lg: "50%", base: "full" }}>
                     <Heading
                       fontSize={{ lg: "56px", base: "32px" }}
                       letterSpacing={"-2.24px"}
+                      textAlign={{ lg: "left", base: "center" }}
                     >
                       Nigeria Certified Contractors
                     </Heading>
@@ -478,9 +397,15 @@ export default function Home() {
                       >
                         <Flex alignItems={"center"} gap={"16px"}>
                           {item.icon}
-                          <Heading fontSize={"32px"}>{item.name}</Heading>
+                          <Heading fontSize={{ lg: "32px", base: "20px" }}>
+                            {item.name}
+                          </Heading>
                         </Flex>
-                        {item.desc && <Text>{item.desc}</Text>}
+                        {item.desc && (
+                          <Text className="body-text-2" mt={"20px"}>
+                            {item.desc}
+                          </Text>
+                        )}
                       </Box>
                     ))}
                   </Stack>
@@ -488,6 +413,7 @@ export default function Home() {
               </Box>
             </SectionAnimation>
             <Box
+              display={{ lg: "block", base: "none" }}
               bg={"#fff"}
               width={"200px"}
               height={"200px"}
@@ -518,6 +444,7 @@ export default function Home() {
                   mt={{ md: "21px", base: "16px" }}
                   justify={"space-between"}
                   gap={{ base: "32px", md: 0 }}
+                  textAlign={{ lg: "left", base: "center" }}
                 >
                   <Stack spacing={"21px"} maxW={"665px"}>
                     <Text
@@ -544,6 +471,7 @@ export default function Home() {
                       speaks for itself.
                     </Text>
                     <Button
+                      display={{ lg: "block", base: "none" }}
                       bgColor={"primary"}
                       color={"secondary"}
                       border={"1px solid"}
@@ -552,6 +480,7 @@ export default function Home() {
                       label="View more projects"
                       transition={"background .5s linear"}
                       mt={"50px"}
+                      onClick={() => window.open("/projects")}
                     />
                   </Box>
                 </Flex>
@@ -582,6 +511,19 @@ export default function Home() {
                     </GridItem>
                   ))}
                 </Grid>
+                <Button
+                  display={{ base: "block", lg: "none" }}
+                  bgColor={"primary"}
+                  color={"secondary"}
+                  border={"1px solid"}
+                  borderColor={"secondary"}
+                  _hover={{ color: "#fff", bgColor: "secondary" }}
+                  label="View more projects"
+                  transition={"background .5s linear"}
+                  mt={"100px"}
+                  mx={"auto"}
+                  onClick={() => window.open("/projects")}
+                />
               </Box>
             </SectionAnimation>
           </section>
@@ -595,6 +537,7 @@ export default function Home() {
                   justify={"space-between"}
                   gap={"48px"}
                   flexDirection={{ lg: "row", base: "column" }}
+                  textAlign={{ base: "center", lg: "left" }}
                 >
                   <Box maxW={"486px"}>
                     <Heading className="heading-3">We are trusted</Heading>

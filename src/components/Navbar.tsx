@@ -217,7 +217,7 @@ const Navbar = () => {
       </Box>
       {isMobile && showMobileMenu && (
         <Box w="full">
-          <Box>
+          <Box pb={"30px"}>
             <Stack spacing={"32px"} mt={"30px"}>
               {navLinks.map((item, index) => (
                 <motion.div
@@ -241,24 +241,6 @@ const Navbar = () => {
                 </motion.div>
               ))}
             </Stack>
-            <Text
-              display={{ base: "block", lg: "none" }}
-              color={"primary"}
-              cursor={"pointer"}
-              fontSize={"18px"}
-              fontWeight={600}
-              onClick={onOpen}
-              mt={"30px"}
-              textAlign={"center"}
-            >
-              Get Cullingham Place Brochure
-            </Text>
-            <Button
-              label="Build with us"
-              w="full"
-              mt={"30px"}
-              onClick={() => location.push("/build-with-us")}
-            />
           </Box>
         </Box>
       )}
