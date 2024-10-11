@@ -22,7 +22,7 @@ const FooterCmp = () => {
           >
             <Flex w="100%" pb={"17.1px"} gap={"48px"}>
               <Image
-                src={"assets/brand-logo-normal.svg"}
+                src={"/assets/brand-logo-normal.svg"}
                 alt="brand-logo"
                 width={128}
                 height={48.8}

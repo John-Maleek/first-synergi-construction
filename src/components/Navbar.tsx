@@ -154,11 +154,12 @@ const Navbar = () => {
         <Flex alignItems={"center"} w="100%">
           <Link href={"/"}>
             <Image
-              src={"assets/brand-logo-black.svg"}
+              src={"/assets/brand-logo-black.svg"}
               alt="brand-logo"
               width={128}
               height={48}
               style={{ height: "auto", width: "auto" }}
+              loading="eager"
             />
           </Link>
           <Flex
