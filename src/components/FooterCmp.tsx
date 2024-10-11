@@ -8,7 +8,7 @@ const FooterCmp = () => {
 
   return (
     <footer>
-      <Box p={{ lg: "10px", base: 0 }}>
+      <Box p={{ lg: "10px", base: 0 }} color={"#fff"}>
         <Box
           style={{ backgroundColor: "#002E3B" }}
           className="section-container"
