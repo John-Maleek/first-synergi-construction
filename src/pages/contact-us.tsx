@@ -216,10 +216,10 @@ const ContactUs = () => {
                   <a href="tel:+23408122687371">
                     <Text>tel: +(234) 081-2268-7371</Text>
                   </a>
-                  <a href="mailto:info@firstsynergihomes.com">
-                    <Text>email: info@firstsynergihomes.com</Text>
+                  <a href="mailto:info@firstsynergiconstruction.com">
+                    <Text>email: info@firstsynergiconstruction.com</Text>
                   </a>
-                  <a href="mailto:info@firstsynergihomes.com">
+                  <a href="mailto:info@firstsynergiconstruction.com">
                     <Text>website: www.firstsynergihomes.com</Text>
                   </a>
                 </Stack>

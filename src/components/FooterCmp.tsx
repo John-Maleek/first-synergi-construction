@@ -125,8 +125,8 @@ const FooterCmp = () => {
                       <a href="tel:+23408122687371">
                         <Text>tel: +(234) 081-2268-7371</Text>
                       </a>
-                      <a href="mailto:info@firstsynergihomes.com">
-                        <Text>email: info@firstsynergihomes.com</Text>
+                      <a href="mailto:info@firstsynergiconstruction.com">
+                        <Text>email: info@firstsynergiconstruction.com</Text>
                       </a>
                     </Stack>
                   </Box>
@@ -224,8 +224,8 @@ const FooterCmp = () => {
                   <a href="tel:+23408122687371">
                     <Text>tel: +(234) 081-2268-7371</Text>
                   </a>
-                  <a href="mailto:info@firstsynergihomes.com">
-                    <Text>email: info@firstsynergihomes.com</Text>
+                  <a href="mailto:info@firstsynergiconstruction.com">
+                    <Text>email: info@firstsynergiconstruction.com</Text>
                   </a>
                 </Stack>
               </Box>

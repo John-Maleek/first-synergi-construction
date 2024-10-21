@@ -102,10 +102,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>First Synergi Homes</title>
+        <title>First Synergi Construction Ltd.</title>
         <meta
           name="description"
-          content="Building exceptional homes and a lifestyle of opulence."
+          content="Building the Future, Restoring the Past"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/brand-favicon.svg" />
