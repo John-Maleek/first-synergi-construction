@@ -1,13 +1,22 @@
 import Head from "next/head";
-import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import FooterCmp from "@/components/FooterCmp";
 import SectionAnimation from "@/components/SectionAnimation";
 import { TypeAnimation } from "react-type-animation";
 import { useRouter } from "next/router";
+import ModalCmp from "@/components/ModalCmp";
+import { ServicesDetails } from "@/static/services";
 
 const ServiceDetailCmp = ({
   heading = "",
@@ -43,7 +52,12 @@ const ServiceDetailCmp = ({
           <Text className="body-text-2" mt={"32px"}>
             {subtitle}
           </Text>
-          <Text color={"secondary"} mt={"32px"}>
+          <Text
+            color={"secondary"}
+            mt={"32px"}
+            onClick={handleOpen}
+            cursor={"pointer"}
+          >
             Learn more
           </Text>
         </Box>
@@ -56,6 +70,9 @@ export default function Services() {
   const navRef = useRef(null);
   const isInView = useInView(navRef, { once: false, amount: 0.6 });
   const location = useRouter();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [activeService, setActiveService] = useState<number>(0);
 
   return (
     <>
@@ -210,17 +227,29 @@ export default function Services() {
             <ServiceDetailCmp
               heading="Architectural Design"
               subtitle="A thorough and informative design brief is an imperative part of the design process. It is an essential point of reference not only for the architect"
+              handleOpen={() => {
+                setActiveService(0);
+                onOpen();
+              }}
             />
             <ServiceDetailCmp
               heading="Building Construction "
-              subtitle="We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures. "
+              subtitle="We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures."
+              handleOpen={() => {
+                setActiveService(1);
+                onOpen();
+              }}
             />
             <ServiceDetailCmp bgImage={"assets/service-img-2.png"} />
             <ServiceDetailCmp bgImage={"assets/service-img-3.png"} />
 
             <ServiceDetailCmp
-              heading="Projec Management"
-              subtitle="First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm"
+              heading="Project Management"
+              subtitle="First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm."
+              handleOpen={() => {
+                setActiveService(2);
+                onOpen();
+              }}
             />
           </SimpleGrid>
           <SimpleGrid display={{ base: "grid", lg: "none" }} columns={1}>
@@ -228,17 +257,29 @@ export default function Services() {
             <ServiceDetailCmp
               heading="Architectural Design"
               subtitle="A thorough and informative design brief is an imperative part of the design process. It is an essential point of reference not only for the architect"
+              handleOpen={() => {
+                setActiveService(0);
+                onOpen();
+              }}
             />
             <ServiceDetailCmp bgImage={"assets/service-img-2.png"} />
             <ServiceDetailCmp
               heading="Building Construction "
-              subtitle="We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures. "
+              subtitle="We offer a full line of building construction services, doing hard bid and design build construction on buildings and structures."
+              handleOpen={() => {
+                setActiveService(1);
+                onOpen();
+              }}
             />
             <ServiceDetailCmp bgImage={"assets/service-img-3.png"} />
 
             <ServiceDetailCmp
-              heading="Projec Management"
+              heading="Project Management"
               subtitle="First Snergyi Construction Limited PM is a Nigerian owned and operated consultancy firm"
+              handleOpen={() => {
+                setActiveService(2);
+                onOpen();
+              }}
             />
           </SimpleGrid>
           <Box
@@ -250,6 +291,7 @@ export default function Services() {
             px={{ lg: "80px", md: "32px", base: "16px" }}
             py={{ lg: "94px", md: "32px", base: "66px" }}
             mb={"40px"}
+            color={"#fff"}
           >
             <Flex direction={"column"} justify={"center"} h={"100%"}>
               <Heading className="heading-2" color={"white"}>
@@ -275,6 +317,13 @@ export default function Services() {
             </Flex>
           </Box>
         </section>
+        <ModalCmp
+          isOpen={isOpen}
+          onClose={onClose}
+          heading={ServicesDetails?.[activeService]?.heading}
+          bodyText={ServicesDetails?.[activeService]?.bodyText}
+          bgImage={ServicesDetails?.[activeService]?.bgImage}
+        />
       </main>
 
       <FooterCmp />

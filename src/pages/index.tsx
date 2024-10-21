@@ -9,12 +9,13 @@ import {
   Heading,
   Stack,
   Text,
+  useDisclosure,
   useMediaQuery,
 } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
@@ -30,6 +31,8 @@ import ImagesList from "@/images.json";
 import CorporateBuildingIcon from "@/components/icons/CorporateBuildingIcon";
 import InteriorDesignIcon from "@/components/icons/InteriorDesignIcon";
 import HealthCareIcon from "@/components/icons/HealthCareIcon";
+import ModalCmp from "@/components/ModalCmp";
+import { ServicesDetails } from "@/static/services";
 
 export default function Home() {
   const router = useRouter();
@@ -93,6 +96,8 @@ export default function Home() {
       }
     }
   }, [isInViewScroll]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [activeService, setActiveService] = useState<number>(0);
 
   return (
     <>
@@ -201,7 +206,7 @@ export default function Home() {
                 <Button
                   label="Build with us"
                   mt={"50px"}
-                  onClick={() => router.push("/build-with-us")}
+                  onClick={() => router.push("/contact-us")}
                 />
               </Box>
             </Box>
@@ -227,7 +232,7 @@ export default function Home() {
                       textTransform={"uppercase"}
                       color={"secondary"}
                     >
-                      first synergi construction
+                      first synergi construction ltd.
                     </Text>
                     <Heading
                       color={"primary"}
@@ -256,6 +261,7 @@ export default function Home() {
                       label="Learn more about us"
                       transition={"background .5s linear"}
                       mt={{ lg: "50px", base: "32px" }}
+                      onClick={() => router.push("/about-us")}
                     />
                   </Box>
                 </Flex>
@@ -316,6 +322,7 @@ export default function Home() {
                       label="Build with us"
                       transition={"background .5s linear"}
                       mt={"50px"}
+                      onClick={() => router.push("/contact-us")}
                     />
                   </Box>
                 </Flex>
@@ -341,6 +348,10 @@ export default function Home() {
                       px={{ lg: "0", base: "20px" }}
                       pb={{ lg: 0, base: "60px" }}
                       textAlign={"left"}
+                      onClick={() => {
+                        setActiveService(index);
+                        onOpen();
+                      }}
                     >
                       <Heading
                         fontSize={{ lg: "48px", base: "32px" }}
@@ -582,6 +593,14 @@ export default function Home() {
             </Circle>
           </Link>
         </Stack>
+
+        <ModalCmp
+          isOpen={isOpen}
+          onClose={onClose}
+          heading={ServicesDetails?.[activeService]?.heading}
+          bodyText={ServicesDetails?.[activeService]?.bodyText}
+          bgImage={ServicesDetails?.[activeService]?.bgImage}
+        />
       </main>
 
       <FooterCmp />

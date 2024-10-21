@@ -150,8 +150,8 @@ export default function Projects() {
           <SectionAnimation>
             <Box pt={"100px"} pb={"108px"}>
               <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
-                <Text className="body-text-1" color={"primary"}>
-                  Featured projects
+                <Text className="body-text-1" color={"secondary"}>
+                  Completed projects
                 </Text>
                 <Heading color={"primary"} className="heading-3" mt={"21px"}>
                   Excellence and comfort is what we build for you
@@ -223,7 +223,7 @@ export default function Projects() {
         <section>
           <SectionAnimation>
             <Box color={"primary"} className="section-container">
-              <Text className="body-text-1" color={"primary"}>
+              <Text className="body-text-1" color={"secondary"}>
                 ongoing projects
               </Text>
 

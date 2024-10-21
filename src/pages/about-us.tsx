@@ -246,6 +246,7 @@ export default function AboutUs() {
                     lineHeight={"130%"}
                     mt={"36px"}
                     textAlign={"center"}
+                    color={"#fff"}
                   >
                     Our mission is to offer cutting edge services in the area of
                     design and construction matching internationally accepted
