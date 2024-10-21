@@ -330,7 +330,7 @@ export default function AboutUs() {
                 </Heading>
 
                 <Box w={{ lg: "50%" }} mt={"24px"}>
-                  <Text className="body-text-2">
+                  <Text className="body-text-2" color={"#fff"}>
                     Choosing First Synergy Construction means choosing a partner
                     who is committed to your success. We work diligently to
                     ensure that your project is completed on time, within

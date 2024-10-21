@@ -59,6 +59,7 @@ const ModalCmp = ({ isOpen, onClose, heading, bodyText, bgImage }: IModal) => {
               lineHeight={"100%"}
               maxW={{ md: "438px", base: "300px" }}
               alignSelf={"flex-end"}
+              color={"#fff"}
             >
               {heading}
             </Heading>
