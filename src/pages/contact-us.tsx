@@ -189,7 +189,7 @@ const ContactUs = () => {
                 bgColor={"primary"}
                 color={"#fff"}
                 width={"100%"}
-                maxW={"418px"}
+                maxW={"450px"}
                 px={"22px"}
                 pt={"37px"}
                 pb={"61px"}
@@ -218,9 +218,6 @@ const ContactUs = () => {
                   </a>
                   <a href="mailto:info@firstsynergiconstruction.com">
                     <Text>email: info@firstsynergiconstruction.com</Text>
-                  </a>
-                  <a href="mailto:info@firstsynergiconstruction.com">
-                    <Text>website: www.firstsynergihomes.com</Text>
                   </a>
                 </Stack>
                 <Text opacity={0.3} className="body-text-1" mt={"32px"}>
